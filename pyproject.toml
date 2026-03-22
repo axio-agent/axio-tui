@@ -1,7 +1,8 @@
 [project]
 name = "axio-tui"
-version = "0.2.1"
+version = "0.2.2"
 description = "Textual TUI application for Axio"
+readme = "README.md"
 requires-python = ">=3.12"
 license = {text = "MIT"}
 dependencies = [

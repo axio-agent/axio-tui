@@ -2,12 +2,13 @@
 
 from __future__ import annotations
 
-from axio_tui.app import _ToolStatusWidget
-from axio_tui.screens import ToolDetailScreen
 from textual.app import App, ComposeResult
 from textual.containers import VerticalScroll
 from textual.widget import Widget
 from textual.widgets import Input, Static
+
+from axio_tui.app import _ToolStatusWidget
+from axio_tui.screens import ToolDetailScreen
 
 
 class _NavApp(App[None]):

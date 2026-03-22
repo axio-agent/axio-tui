@@ -10,6 +10,7 @@ from unittest.mock import AsyncMock, patch
 
 import aiohttp
 from axio.models import Capability, ModelRegistry, ModelSpec, TransportMeta
+
 from axio_tui.sqlite_context import ProjectConfig
 from axio_tui.transport_registry import TransportRegistry
 

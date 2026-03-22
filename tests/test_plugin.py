@@ -7,6 +7,7 @@ from unittest.mock import MagicMock, patch
 
 from axio.permission import PermissionGuard
 from axio.tool import ToolHandler
+
 from axio_tui.plugin import discover_guards, discover_tools, discover_transports
 
 

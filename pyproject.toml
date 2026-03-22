@@ -62,3 +62,15 @@ dev = [
     "ruff>=0.9",
     "pytest-cov>=7.1.0",
 ]
+
+[[tool.mypy.overrides]]
+module = [
+    "axio", "axio.*",
+    "axio_transport_openai", "axio_transport_nebius", "axio_transport_codex",
+    "axio_tools_local", "axio_tools_local.*",
+    "axio_tools_mcp", "axio_tools_mcp.*",
+    "axio_tools_docker", "axio_tools_docker.*",
+    "axio_tui_rag", "axio_tui_rag.*",
+    "axio_tui_guards", "axio_tui_guards.*",
+]
+ignore_missing_imports = true

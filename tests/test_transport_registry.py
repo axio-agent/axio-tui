@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import contextlib
+from collections.abc import Generator
+from contextlib import AbstractContextManager
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import ClassVar
@@ -70,11 +72,13 @@ class _NoMetaTransport:
         pass
 
 
-def _patch_discover(transports: dict[str, type], settings: dict[str, type] | None = None):
+def _patch_discover(
+    transports: dict[str, type], settings: dict[str, type] | None = None
+) -> AbstractContextManager[None]:
     """Return a context manager that patches discover_transports and discover_transport_settings."""
 
     @contextlib.contextmanager
-    def _ctx():
+    def _ctx() -> Generator[None, None, None]:
         with (
             patch("axio_tui.transport_registry.discover_transports", return_value=transports),
             patch("axio_tui.transport_registry.discover_transport_settings", return_value=settings or {}),

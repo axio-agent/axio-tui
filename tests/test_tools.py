@@ -3,11 +3,14 @@
 from __future__ import annotations
 
 import os
+from collections.abc import AsyncIterator
 from pathlib import Path
 
 import pytest
 from axio.agent import Agent
 from axio.context import MemoryContextStore
+from axio.events import StreamEvent
+from axio.messages import Message
 from axio.testing import StubTransport, make_text_response, make_tool_use_response
 from axio.tool import Tool
 
@@ -80,7 +83,7 @@ class TestSubAgent:
             await handler()
             assert len(received_context) == 1
             history = await received_context[0].get_history()
-            assert history[0].content[0].text == "hello"  # type: ignore[union-attr]
+            assert history[0].content[0].text == "hello"  # type: ignore[attr-defined]
             parent_history = await parent.get_history()
             assert len(parent_history) == 1
         finally:
@@ -153,7 +156,7 @@ class TestVisionAnalyze:
         assert "not configured" in result
 
     async def test_file_not_found(self, tmp_path: Path) -> None:
-        VisionAnalyze._transport = StubTransport([make_text_response("ok")])  # type: ignore[assignment]
+        VisionAnalyze._transport = StubTransport([make_text_response("ok")])
         old_cwd = os.getcwd()
         try:
             os.chdir(tmp_path)
@@ -166,7 +169,7 @@ class TestVisionAnalyze:
 
     async def test_unsupported_format(self, tmp_path: Path) -> None:
         (tmp_path / "file.bmp").write_bytes(b"\x00")
-        VisionAnalyze._transport = StubTransport([make_text_response("ok")])  # type: ignore[assignment]
+        VisionAnalyze._transport = StubTransport([make_text_response("ok")])
         old_cwd = os.getcwd()
         try:
             os.chdir(tmp_path)
@@ -180,7 +183,7 @@ class TestVisionAnalyze:
     async def test_streams_vision_result(self, tmp_path: Path) -> None:
         (tmp_path / "photo.png").write_bytes(_TINY_PNG)
         transport = StubTransport([make_text_response("A red pixel")])
-        VisionAnalyze._transport = transport  # type: ignore[assignment]
+        VisionAnalyze._transport = transport
         old_cwd = os.getcwd()
         try:
             os.chdir(tmp_path)
@@ -196,15 +199,15 @@ class TestVisionAnalyze:
         from axio.blocks import ImageBlock, TextBlock
 
         (tmp_path / "test.jpg").write_bytes(b"\xff\xd8\xff\xe0")  # JPEG magic bytes
-        captured: list[list[object]] = []
+        captured: list[list[Message]] = []
 
         class CapturingTransport(StubTransport):
-            def stream(self, messages, tools, system):  # type: ignore[override]
+            def stream(self, messages: list[Message], tools: list[Tool], system: str) -> AsyncIterator[StreamEvent]:
                 captured.append(messages)
                 return super().stream(messages, tools, system)
 
         transport = CapturingTransport([make_text_response("desc")])
-        VisionAnalyze._transport = transport  # type: ignore[assignment]
+        VisionAnalyze._transport = transport
         old_cwd = os.getcwd()
         try:
             os.chdir(tmp_path)

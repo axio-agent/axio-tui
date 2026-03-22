@@ -680,7 +680,8 @@ class AgentApp(App[None]):
             try:
                 from axio_tui_guards.dialogs import PathGuardDialog
 
-                return await self.push_screen_wait(PathGuardDialog(msg))
+                result: str = await self.push_screen_wait(PathGuardDialog(msg))
+                return result
             except ImportError:
                 return "y"
 
@@ -689,7 +690,8 @@ class AgentApp(App[None]):
             try:
                 from axio_tui_guards.dialogs import LLMGuardDialog
 
-                return await self.push_screen_wait(LLMGuardDialog(msg))
+                result = await self.push_screen_wait(LLMGuardDialog(msg))
+                return str(result)
             except ImportError:
                 return "y"
 

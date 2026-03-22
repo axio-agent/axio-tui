@@ -173,14 +173,14 @@ wheels = [
 
 [[package]]
 name = "axio"
-version = "0.1.0"
+version = "0.1.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "pydantic" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/c5/85/5f2e54374e4b1f50debae8c759dcfd0bcb47d49571eecc7e704b4bb1dd13/axio-0.1.0.tar.gz", hash = "sha256:07316985478a7a1fe5862f862ba117951baadf5889457c382fac02b9521e0ce6", size = 23475, upload-time = "2026-03-22T16:29:43.259Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/d5/c4/9fb5beefc5fa3090de3bfbdbf761fa14b0467e04d60f464166ccc0e9ca4c/axio-0.1.1.tar.gz", hash = "sha256:c59d8b246355379653dc967306189d997328dbfe145bbddf8873ec5786f48420", size = 53962, upload-time = "2026-03-22T18:38:36.497Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/ab/8c/f2a75667c11bc03505279c618f9e832cc468b880312984f7958b6a05779d/axio-0.1.0-py3-none-any.whl", hash = "sha256:80c090cf22b23761f1ea47eba13ba013fa991289ba76f5fadb2a30335aff29e5", size = 16683, upload-time = "2026-03-22T16:29:44.519Z" },
+    { url = "https://files.pythonhosted.org/packages/19/07/74deca7e757a5e66fe58ad0c54e605764e8407c49021dd5fe4d9947c9f8b/axio-0.1.1-py3-none-any.whl", hash = "sha256:b764858e311825e5648354fda579894cc522a10d3bc4cf939e8517ffc2fb1b54", size = 16836, upload-time = "2026-03-22T18:38:35.348Z" },
 ]
 
 [[package]]
@@ -235,15 +235,15 @@ wheels = [
 
 [[package]]
 name = "axio-transport-openai"
-version = "0.1.0"
+version = "0.1.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "aiohttp" },
     { name = "axio" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/b9/e9/5979f953f0ea7dd3d593396d5a50713492204f72264f6ff8aa58fcb0330f/axio_transport_openai-0.1.0.tar.gz", hash = "sha256:38af1c93bd096d78fd22ba1e19d666d8e5d8ec7f566e281bcf540031d590e399", size = 16314, upload-time = "2026-03-22T16:29:46.521Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/63/3e/6f6aa59161da62827c4d31f47931fd26eeb18568524299d91410a1fcfbfd/axio_transport_openai-0.1.2.tar.gz", hash = "sha256:6d154f5124db55ddff109757704527a24d246fa425f28133b5911f5df8635501", size = 89413, upload-time = "2026-03-22T18:54:19.936Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/70/88/5c914c5738e871d4ab1a7bf5e7e4224eb9497f585a0445e2ee5fa90bb1fe/axio_transport_openai-0.1.0-py3-none-any.whl", hash = "sha256:17d6266dff75fdb384a27539b4c0c807a4209e5cf183f9e9a6820551c3c89d1e", size = 8022, upload-time = "2026-03-22T16:29:47.445Z" },
+    { url = "https://files.pythonhosted.org/packages/d2/e1/75fc51e51d28bad1cffbb14025f8d9dc1eb0214426c08677b0e412e1546e/axio_transport_openai-0.1.2-py3-none-any.whl", hash = "sha256:ab4bcbd8f6041c3235cbf9b53d439c452386783acc40410b2019b885e093d109", size = 8232, upload-time = "2026-03-22T18:54:18.694Z" },
 ]
 
 [[package]]
@@ -1770,15 +1770,15 @@ wheels = [
 
 [[package]]
 name = "starlette"
-version = "0.52.1"
+version = "1.0.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "anyio" },
     { name = "typing-extensions", marker = "python_full_version < '3.13'" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/c4/68/79977123bb7be889ad680d79a40f339082c1978b5cfcf62c2d8d196873ac/starlette-0.52.1.tar.gz", hash = "sha256:834edd1b0a23167694292e94f597773bc3f89f362be6effee198165a35d62933", size = 2653702, upload-time = "2026-01-18T13:34:11.062Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/81/69/17425771797c36cded50b7fe44e850315d039f28b15901ab44839e70b593/starlette-1.0.0.tar.gz", hash = "sha256:6a4beaf1f81bb472fd19ea9b918b50dc3a77a6f2e190a12954b25e6ed5eea149", size = 2655289, upload-time = "2026-03-22T18:29:46.779Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/81/0d/13d1d239a25cbfb19e740db83143e95c772a1fe10202dda4b76792b114dd/starlette-0.52.1-py3-none-any.whl", hash = "sha256:0029d43eb3d273bc4f83a08720b4912ea4b071087a3b48db01b7c839f7954d74", size = 74272, upload-time = "2026-01-18T13:34:09.188Z" },
+    { url = "https://files.pythonhosted.org/packages/0b/c9/584bc9651441b4ba60cc4d557d8a547b5aff901af35bda3a4ee30c819b82/starlette-1.0.0-py3-none-any.whl", hash = "sha256:d3ec55e0bb321692d275455ddfd3df75fff145d009685eb40dc91fc66b03d38b", size = 72651, upload-time = "2026-03-22T18:29:45.111Z" },
 ]
 
 [[package]]
